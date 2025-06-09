@@ -1,3 +1,4 @@
+
 public class VertexObj<V, E> {
     protected V info;
     protected int position;
@@ -13,5 +14,22 @@ public class VertexObj<V, E> {
 
     public int getPosition() {
         return position;
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        VertexObj<?, ?> vertexObj = (VertexObj<?, ?>) o;
+        return Objects.equals(info, vertexObj.info);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(info);
+    }
+
+    @Override
+    public String toString() {
+        return info.toString();
     }
 }
